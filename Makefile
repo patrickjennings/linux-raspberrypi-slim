@@ -10,4 +10,4 @@ install:
 	pacman -U core/linux-raspberrypi/linux-raspberrypi-slim-[^headers]*.xz
 
 clean:
-	git clean -fdx
+	rm -rf PKGBUILDs/
