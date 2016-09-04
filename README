@@ -1,0 +1,35 @@
+Slim version of the Arch package, linux-raspberrypi, for ARM7H (Rasperry PI 2).
+
+This package manages the compilation of the official Raspberry PI 2 kernel
+and headers with a custom slimmed down config.v7 configuration file. Does not
+support the original Raspberry PI (ARM6 architecture), which uses config.v6,
+currently. This should also work on the Raspberry PI 3 (with ARM7 compatability)
+but has not been tested.
+
+Note: For experienced users who are willing to manage a custom compiled kernel.
+
+
+Kernel changes:
+Removes support for LVM and MD RAID.
+Uses modules instead of compiled in drivers for: BTRFS, XFS, REISERFS, and JFS.
+
+
+Advantages:
+Drastically decreases boot time as a result of no auto-RAID detection.
+A few megabytes of free RAM.
+
+Disadvantages:
+Advanced usage.
+Compile time takes several hours.
+Must manually update when new kernel is available.
+
+
+Arch Dependencies:
+git base-devel xmlto docbook-xsl kmod inetutils bc git
+
+
+Installation:
+make
+sudo make install
+
+Update the kernel using the same steps as the installation.
